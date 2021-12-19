@@ -1,27 +1,34 @@
 package com.okedoc.productdashboard.data.remote
 
-import retrofit2.http.POST
+import com.okedoc.productdashboard.data.model.product.ProductResponse
+import retrofit2.http.*
 
 interface ProductApiService {
 
-    @POST("items")
-    suspend fun getProducts()
+    @GET("items")
+    suspend fun getProducts(): List<ProductResponse>
 
+    @FormUrlEncoded
     @POST("item/search")
-    suspend fun getProductBySku(sku: String)
+    suspend fun getProductBySku(@Field("Sku") sku: String)
 
+    @FormUrlEncoded
     @POST("auth/login")
-    suspend fun login()
+    suspend fun login(@FieldMap loginField: Map<String, String>)
 
+    @FormUrlEncoded
     @POST("register")
-    suspend fun register()
+    suspend fun register(@FieldMap registerField: Map<String, String>)
 
+    @FormUrlEncoded
     @POST("item/add")
-    suspend fun addProduct()
+    suspend fun addProduct(@FieldMap product: Map<String, String>)
 
+    @FormUrlEncoded
     @POST("item/update")
-    suspend fun editProduct()
+    suspend fun editProduct(@FieldMap product: Map<String, String>)
 
+    @FormUrlEncoded
     @POST("")
-    suspend fun deleteProduct()
+    suspend fun deleteProduct(@Field("Sku") sku: String)
 }

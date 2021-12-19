@@ -4,8 +4,12 @@ import android.content.Context
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
+import com.okedoc.productdashboard.BuildConfig
 import com.okedoc.productdashboard.data.remote.AuthInterceptor
+import com.okedoc.productdashboard.data.remote.ProductApiService
 import com.okedoc.productdashboard.data.repositories.ProductRepositoryImpl
+import com.okedoc.productdashboard.domain.interactors.ProductInteractor
+import com.okedoc.productdashboard.domain.interactors.ProductInteractorImpl
 import com.okedoc.productdashboard.domain.repositories.ProductRepository
 import dagger.Module
 import dagger.Provides
@@ -41,6 +45,7 @@ class ApplicationModule {
     @Singleton
     fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
+            .baseUrl(BuildConfig.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .client(okHttpClient)
             .build()
@@ -48,6 +53,17 @@ class ApplicationModule {
 
     @Provides
     @Singleton
+    fun provideProductApiService(retrofit: Retrofit): ProductApiService {
+        return retrofit.create(ProductApiService::class.java)
+    }
+
+    @Provides
+    @Singleton
     fun provideRepository(productRepositoryImpl: ProductRepositoryImpl): ProductRepository =
         productRepositoryImpl
+
+    @Provides
+    @Singleton
+    fun provideProductInteractor(productInteractorImpl: ProductInteractorImpl): ProductInteractor =
+        productInteractorImpl
 }

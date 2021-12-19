@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/top_corner_background"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/edit_sku_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sku"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edit_sku_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/search_background_white"
+        android:hint="input sku.."
+        android:padding="10dp"
+        app:layout_constraintTop_toBottomOf="@id/edit_sku_title" />
+
+    <TextView
+        android:id="@+id/edit_product_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Product Name"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_sku_input" />
+
+    <EditText
+        android:id="@+id/edit_product_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/search_background_white"
+        android:hint="input product name.."
+        android:padding="10dp"
+        app:layout_constraintTop_toBottomOf="@id/edit_product_title" />
+
+    <TextView
+        android:id="@+id/edit_quantity_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Quantity"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_product_input" />
+
+    <EditText
+        android:id="@+id/edit_quantity_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/search_background_white"
+        android:hint="input quantity.."
+        android:padding="10dp"
+        app:layout_constraintTop_toBottomOf="@id/edit_quantity_title" />
+
+    <TextView
+        android:id="@+id/edit_price_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Price"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_quantity_input" />
+
+    <EditText
+        android:id="@+id/edit_price_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/search_background_white"
+        android:hint="input price.."
+        android:padding="10dp"
+        app:layout_constraintTop_toBottomOf="@id/edit_price_title" />
+
+    <TextView
+        android:id="@+id/edit_unit_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Unit"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_price_input" />
+
+    <EditText
+        android:id="@+id/edit_unit_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/search_background_white"
+        android:hint="input unit.."
+        android:padding="10dp"
+        app:layout_constraintTop_toBottomOf="@id/edit_unit_title" />
+
+    <TextView
+        android:id="@+id/edit_status_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Status"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_unit_input" />
+
+    <EditText
+        android:id="@+id/edit_status_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/search_background_white"
+        android:hint="input status.."
+        android:padding="10dp"
+        app:layout_constraintTop_toBottomOf="@id/edit_status_title" />
+
+    <android.widget.Button
+        android:id="@+id/button_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/button_background_green"
+        android:backgroundTint="@null"
+        android:paddingHorizontal="10dp"
+        android:text="Edit"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/edit_status_input"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
