@@ -20,5 +20,5 @@ interface ProductRepository {
 
     suspend fun saveToken(data: String)
 
-    suspend fun getToken()
+    suspend fun getToken(): String
 }

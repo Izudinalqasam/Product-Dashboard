@@ -32,7 +32,7 @@ class RegisterViewModel @Inject constructor(
                     val result = productInteractor.register(email, password)
                     _register.postValue(Resource.Success(successData = ""))
                 } catch (error: Exception) {
-                    _register.postValue(Resource.Error(messageError = ""))
+                    _register.postValue(Resource.Error(messageError = error.message ?: ""))
                 }
             }
         }

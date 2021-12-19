@@ -1,6 +1,7 @@
 package com.okedoc.productdashboard.di
 
 import android.content.Context
+import android.content.SharedPreferences
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
@@ -31,6 +32,12 @@ class ApplicationModule {
     @Singleton
     fun provideDataStore(@ApplicationContext appContext: Context): DataStore<Preferences> {
         return appContext.dataStore
+    }
+
+    @Provides
+    @Singleton
+    fun provideSharedPreferences(@ApplicationContext appContext: Context): SharedPreferences {
+        return appContext.getSharedPreferences("product-dashboard", Context.MODE_PRIVATE)
     }
 
     @Provides

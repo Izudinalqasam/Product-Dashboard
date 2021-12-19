@@ -41,7 +41,7 @@ class ProductInteractorImpl @Inject constructor(
         return repository.saveToken(data)
     }
 
-    override suspend fun getToken() {
+    override suspend fun getToken(): String {
         return repository.getToken()
     }
 

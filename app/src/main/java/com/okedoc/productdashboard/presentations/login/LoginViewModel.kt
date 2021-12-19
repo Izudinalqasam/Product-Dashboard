@@ -30,8 +30,9 @@ class LoginViewModel @Inject constructor(
                 try {
                     val result = productInteractor.login(email, password)
                     _login.postValue(Resource.Success(successData = ""))
+                    productInteractor.saveToken("")
                 } catch (error: Exception) {
-                    _login.postValue(Resource.Error(messageError = ""))
+                    _login.postValue(Resource.Error(messageError = error.message ?: ""))
                 }
             }
         }

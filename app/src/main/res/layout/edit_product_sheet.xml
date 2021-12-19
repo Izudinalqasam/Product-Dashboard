@@ -10,7 +10,7 @@
         android:id="@+id/edit_sku_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sku"
+        android:text="@string/sku_label"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -21,8 +21,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:autofillHints="name"
         android:background="@drawable/search_background_white"
-        android:hint="input sku.."
+        android:hint="@string/input_sku_hint"
+        android:inputType="text"
         android:padding="10dp"
         app:layout_constraintTop_toBottomOf="@id/edit_sku_title" />
 
@@ -31,7 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Product Name"
+        android:text="@string/product_name_label"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -42,8 +44,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:autofillHints="name"
         android:background="@drawable/search_background_white"
-        android:hint="input product name.."
+        android:hint="@string/input_product_name_hint"
+        android:inputType="text"
         android:padding="10dp"
         app:layout_constraintTop_toBottomOf="@id/edit_product_title" />
 
@@ -52,7 +56,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Quantity"
+        android:text="@string/quantity_label"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -63,8 +67,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:autofillHints="name"
         android:background="@drawable/search_background_white"
-        android:hint="input quantity.."
+        android:hint="@string/input_quantity_hint"
+        android:inputType="number"
         android:padding="10dp"
         app:layout_constraintTop_toBottomOf="@id/edit_quantity_title" />
 
@@ -73,7 +79,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Price"
+        android:text="@string/price_label"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -84,8 +90,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:autofillHints="name"
         android:background="@drawable/search_background_white"
-        android:hint="input price.."
+        android:hint="@string/input_price_hint"
+        android:inputType="number"
         android:padding="10dp"
         app:layout_constraintTop_toBottomOf="@id/edit_price_title" />
 
@@ -94,7 +102,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Unit"
+        android:text="@string/unit_label"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -105,8 +113,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:autofillHints="name"
         android:background="@drawable/search_background_white"
-        android:hint="input unit.."
+        android:hint="@string/input_unit_hint"
+        android:inputType="text"
         android:padding="10dp"
         app:layout_constraintTop_toBottomOf="@id/edit_unit_title" />
 
@@ -115,7 +125,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Status"
+        android:text="@string/status_label"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -126,8 +136,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:autofillHints="name"
         android:background="@drawable/search_background_white"
-        android:hint="input status.."
+        android:hint="@string/input_status_hint"
+        android:inputType="text"
         android:padding="10dp"
         app:layout_constraintTop_toBottomOf="@id/edit_status_title" />
 
@@ -140,11 +152,11 @@
         android:background="@drawable/button_background_green"
         android:backgroundTint="@null"
         android:paddingHorizontal="10dp"
-        android:text="Edit"
+        android:text="@string/edit_label"
         android:textAllCaps="false"
         android:textColor="@color/white"
-        app:layout_constraintTop_toBottomOf="@id/edit_status_input"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_status_input" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

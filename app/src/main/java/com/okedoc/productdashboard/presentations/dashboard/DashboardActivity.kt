@@ -3,13 +3,17 @@ package com.okedoc.productdashboard.presentations.dashboard
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.ProgressBar
 import androidx.activity.viewModels
 import androidx.core.widget.doOnTextChanged
+import androidx.datastore.preferences.preferencesDataStore
+import androidx.lifecycle.asLiveData
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewbinding.ViewBinding
 import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.okedoc.productdashboard.data.local.PreferencesKeys
 import com.okedoc.productdashboard.data.model.product.ProductRequest
 import com.okedoc.productdashboard.databinding.ActivityDashboardBinding
 import com.okedoc.productdashboard.databinding.AddProductSheetBinding
@@ -22,6 +26,7 @@ import com.okedoc.productdashboard.presentations.register.RegisterFragmentSheet
 import com.okedoc.productdashboard.utils.debounce
 import com.okedoc.productdashboard.utils.observeUiState
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.map
 
 @AndroidEntryPoint
 class DashboardActivity : AppCompatActivity() {
@@ -31,6 +36,7 @@ class DashboardActivity : AppCompatActivity() {
     private lateinit var editProductDialog: BottomSheetDialog
 
     private val dashboardViewModel: DashboardViewModel by viewModels()
+    private val productDataStore by preferencesDataStore(name = "ProductDashboard")
 
     private val progressBar by lazy {
         ProgressBar(
@@ -157,10 +163,16 @@ class DashboardActivity : AppCompatActivity() {
 
             }
         }
-    }
 
-    private fun setupProgressBar() {
-
+        productDataStore.data.map {
+            it[PreferencesKeys.IS_LOGIN]
+        }.asLiveData().observe(this) {
+            if (it != null && it == true) {
+                dashboardBinding.buttonAddProduct.visibility = View.VISIBLE
+            } else {
+                dashboardBinding.buttonAddProduct.visibility = View.GONE
+            }
+        }
     }
 
     private fun <T : ViewBinding> createBottomSheetLayout(

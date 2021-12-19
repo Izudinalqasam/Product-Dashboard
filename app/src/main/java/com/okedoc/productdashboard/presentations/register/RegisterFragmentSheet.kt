@@ -1,6 +1,6 @@
 package com.okedoc.productdashboard.presentations.register
 
-import android.R
+import android.R.attr
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -23,7 +23,7 @@ class RegisterFragmentSheet : BottomSheetDialogFragment() {
         ProgressBar(
             activity,
             null,
-            R.attr.progressBarStyleLarge
+            attr.progressBarStyleLarge
         )
     }
 

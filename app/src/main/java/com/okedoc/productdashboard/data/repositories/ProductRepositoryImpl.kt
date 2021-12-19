@@ -45,7 +45,7 @@ class ProductRepositoryImpl @Inject constructor(
         return localDataSource.saveToken(data)
     }
 
-    override suspend fun getToken() {
-        return localDataSource.saveToken("")
+    override suspend fun getToken(): String {
+        return localDataSource.getToken()
     }
 }
